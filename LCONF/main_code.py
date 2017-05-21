@@ -628,7 +628,7 @@ def lconf_validate_file(path_to_lconf_file):
          '   <{}>'.format(path_to_lconf_file)
       ])
 
-   print('\n\n====== VALIDATING SECTIONS IN FILE:\n   <{}>'.format(path_to_lconf_file))
+   print(('\n\n====== VALIDATING SECTIONS IN FILE:\n   <{}>'.format(path_to_lconf_file)))
    with open(path_to_lconf_file, 'r') as file_:
       for section_lconf_source in lconf_extract_all_sections(file_.read()):
          lconf_validate_one_section_str(section_lconf_source)
@@ -1734,7 +1734,7 @@ def _helper_dict_to_lconf(result, key, item_value, onelinelists, skip_none_value
                      '    <{}>'.format(list_item)
                   ])
          elif onelinelists:
-            print('    elif onelinelists:: ', onelinelists, type(item_value), item_value)
+            print(('    elif onelinelists:: ', onelinelists, type(item_value), item_value))
             temp_list = []
             for a_ in item_value:
                if a_.__class__ in {dict, list}:
@@ -1763,7 +1763,7 @@ def _helper_dict_to_lconf(result, key, item_value, onelinelists, skip_none_value
             result.append('{}- {}'.format(indent, key))
    elif item_value.__class__ in {dict, OrderedDict}:
       result.append('{}. {}'.format(indent, key))
-      for mapping_key, mapping_value in item_value.items():
+      for mapping_key, mapping_value in list(item_value.items()):
          # check not empty string and None, False
          if mapping_value.__class__ in {list, dict, OrderedDict}:
             _helper_dict_to_lconf(result, mapping_key, mapping_value, onelinelists, skip_none_value, indent + '   ')
@@ -1822,7 +1822,7 @@ def lconf_dict_to_lconf(in_dict, section_name, onelinelists=True, skip_none_valu
       del in_dict[SECTION_END_TAG]
 
    # loop through main (root) keys
-   for key, item_value in in_dict.items():
+   for key, item_value in list(in_dict.items()):
       if key == SECTION_START_TAG:
          result[0] = '{} :: {}'.format(SECTION_START_TAG, item_value)
          continue
@@ -1872,7 +1872,7 @@ def _helper_lconf_to_native_type(input_obj):
    :return:
    """
    if input_obj.__class__ in {LconfRoot, LconfKVMap, LconfBlkI, LconfBlk}:
-      return dict([(key, _helper_lconf_to_native_type(value)) for key, value in input_obj.items()])
+      return dict([(key, _helper_lconf_to_native_type(value)) for key, value in list(input_obj.items())])
    elif input_obj.__class__ == LconfKVList:
       return list(input_obj)
    elif input_obj.__class__ == LconfListOT:

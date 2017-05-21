@@ -623,7 +623,7 @@ def test_lconf_section_splitlines__trailing_space__expect_failure():
 
    section_lines, section_name = lconf_section_splitlines(lconf_section_raw_str, validate_first_line=False)
    for line in section_lines:
-      print('<{}>'.format(line))
+      print(('<{}>'.format(line)))
    default_lconf_obj = lconf_prepare_default_obj(lconf_section__template_obj, with_comments=False)
    lconf_obj = lconf_parse_section_lines(default_lconf_obj, section_lines, section_name, lconf_section__template_obj)
 

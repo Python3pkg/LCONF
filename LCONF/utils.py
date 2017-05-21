@@ -30,7 +30,7 @@ from os.path import (
    join as path_join,
 )
 
-from Cython.Distutils import build_ext as cython_build_ext
+from .Cython.Distutils import build_ext as cython_build_ext
 
 from LCONF import TESTED_HOST_OS
 
@@ -61,7 +61,7 @@ This `LCONF` was tested with:
 ========================================================================
 
 '''.format(self.__error_type, self.__info, TESTED_HOST_OS)
-      print(self.__txt)
+      print((self.__txt))
 
 
 # ===========================================================================================================================
@@ -137,4 +137,4 @@ LCONF-MethodDeactivated ERROR:
 ========================================================================
 
 '''
-      print(self.__txt)
+      print((self.__txt))

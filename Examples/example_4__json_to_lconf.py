@@ -178,10 +178,10 @@ def main():
 
    # EXAMPLE 4 a: ACCESS The Section-INFO
    print('\n\n============== EXAMPLE 4 a: ACCESS The Section-INFO ==============\n')
-   print('  lconf_parse_obj.key_order: ', lconf_parse_obj.key_order)
-   print('  lconf_parse_obj.section_name: ', lconf_parse_obj.section_name)
-   print('  lconf_parse_obj.is_parsed: ', lconf_parse_obj.is_parsed)
-   print('  lconf_parse_obj.has_comments: ', lconf_parse_obj.has_comments)
+   print(('  lconf_parse_obj.key_order: ', lconf_parse_obj.key_order))
+   print(('  lconf_parse_obj.section_name: ', lconf_parse_obj.section_name))
+   print(('  lconf_parse_obj.is_parsed: ', lconf_parse_obj.is_parsed))
+   print(('  lconf_parse_obj.has_comments: ', lconf_parse_obj.has_comments))
 
    # EXAMPLE 4 a: EMIT DEFAULT OBJ
    lconf_section_emitted_default_obj_str = lconf_emit_default_obj(
@@ -271,10 +271,10 @@ def main():
 
    # EXAMPLE 4 b: ACCESS The Section-INFO
    print('\n\n============== EXAMPLE 4 b: ACCESS The Section-INFO ==============\n')
-   print('  lconf_parse_obj.key_order: ', lconf_parse_obj.key_order)
-   print('  lconf_parse_obj.section_name: ', lconf_parse_obj.section_name)
-   print('  lconf_parse_obj.is_parsed: ', lconf_parse_obj.is_parsed)
-   print('  lconf_parse_obj.has_comments: ', lconf_parse_obj.has_comments)
+   print(('  lconf_parse_obj.key_order: ', lconf_parse_obj.key_order))
+   print(('  lconf_parse_obj.section_name: ', lconf_parse_obj.section_name))
+   print(('  lconf_parse_obj.is_parsed: ', lconf_parse_obj.is_parsed))
+   print(('  lconf_parse_obj.has_comments: ', lconf_parse_obj.has_comments))
 
    # EXAMPLE 4 b: EMIT DEFAULT OBJ
    lconf_section_emitted_default_obj_str = lconf_emit_default_obj(

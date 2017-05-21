@@ -450,7 +450,7 @@ class LconfListOT(list):
             seen_twice[item] = None
          else:
             seen[item] = None
-      return seen_twice.keys()
+      return list(seen_twice.keys())
 
    # noinspection PyUnresolvedReferences
    def replace_column_names(self, new_column_names_tuple):
